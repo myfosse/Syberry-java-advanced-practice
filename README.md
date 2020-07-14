@@ -1,0 +1,2 @@
+# BE Internship Rules
+
