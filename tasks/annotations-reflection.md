@@ -28,4 +28,12 @@ CustomThreadPoolExecutor customThreadPoolExecutor = new CustomThreadPoolExecutor
 customThreadPoolExecutor.execute(processor);
 ```
 
+The resulting output should be the same as the following example:
+```
+The Processor class is running...
+The Processor class is running...
+The Processor class is running...
+message = Hello world!
+```
+
 Pay attention, that the instance of the ‘Processor’ class has been run '3' times. Also, we can see the list of its non-static private fields. In this case, it’s only one ‘message’ field.
