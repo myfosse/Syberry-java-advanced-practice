@@ -54,7 +54,13 @@ public class Main {
         matcher = REGEX_FOR_MATRIX_VALIDATION.matcher(fileLines.get(i));
         if (matcher.matches()) {
           inputBinaryMatrix[i] =
-              Arrays.stream(fileLines.get(i).trim().split(" "))
+              Arrays.stream(
+                      fileLines
+                          .get(i)
+                          .replaceAll("\t", " ")
+                          .replaceAll("[ ]{2,}", " ")
+                          .trim()
+                          .split(" "))
                   .mapToInt(Integer::parseInt)
                   .toArray();
         } else {
