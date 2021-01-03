@@ -22,7 +22,12 @@ public class Main {
 
     readFileLinesToArray(fileLines);
 
-    int[][] count = countAmountOfNeighborsForEachCellInMatrix(fileLines);
+    int[][] count = new int[0][];
+    try {
+      count = countAmountOfNeighborsForEachCellInMatrix(fileLines);
+    } catch (IncorrectInputMatrixException e) {
+      e.printStackTrace();
+    }
 
     writeMatrixToFile(count);
   }
@@ -42,15 +47,13 @@ public class Main {
     }
   }
 
-  public static int[][] countAmountOfNeighborsForEachCellInMatrix(final List<String> fileLines) {
+  public static int[][] countAmountOfNeighborsForEachCellInMatrix(final List<String> fileLines) throws IncorrectInputMatrixException {
 
-    boolean isCorrectInputMatrix = true;
     int[][] inputBinaryMatrix = new int[fileLines.size()][];
     int[][] answerMatrixWithAmountOfNeighborsForEachCell = new int[0][0];
 
     Matcher matcher;
     for (int i = 0; i < fileLines.size(); i++) {
-      try {
         matcher = REGEX_FOR_MATRIX_VALIDATION.matcher(fileLines.get(i));
         if (matcher.matches()) {
           inputBinaryMatrix[i] =
@@ -64,15 +67,12 @@ public class Main {
                   .mapToInt(Integer::parseInt)
                   .toArray();
         } else {
-          isCorrectInputMatrix = false;
           throw new IncorrectInputMatrixException("Matrix should only contain 0 and 1");
         }
-      } catch (IncorrectInputMatrixException e) {
-        e.printStackTrace();
       }
-    }
 
-    if (isCorrectInputMatrix && fileLines.size() > 0) {
+
+    if (fileLines.size() > 0) {
 
       answerMatrixWithAmountOfNeighborsForEachCell =
           new int[inputBinaryMatrix.length][inputBinaryMatrix[0].length];
