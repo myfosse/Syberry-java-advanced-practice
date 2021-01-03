@@ -1,4 +1,4 @@
-package task1.exception;
+package task1_eh.exception;
 
 /** @author Andrey Egorov */
 public class IncorrectInputMatrixException extends Exception {

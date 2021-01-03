@@ -1,6 +1,6 @@
-package task1;
+package task1_eh;
 
-import task1.exception.IncorrectInputMatrixException;
+import task1_eh.exception.IncorrectInputMatrixException;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class Main {
   }
 
   public static void readFileLinesToArray(List<String> fileLines) {
-    try (Scanner s = new Scanner(new File("src\\task1\\data\\input.txt"))) {
+    try (Scanner s = new Scanner(new File("src\\task1_eh\\data\\input.txt"))) {
       String str;
       while (s.hasNext()) {
         str = s.nextLine();
@@ -113,7 +113,7 @@ public class Main {
   }
 
   public static void writeMatrixToFile(int[][] matrix) {
-    try (Writer writer = new BufferedWriter(new FileWriter("src\\task1\\data\\output.txt"))) {
+    try (Writer writer = new BufferedWriter(new FileWriter("src\\task1_eh\\data\\output.txt"))) {
       int M = matrix.length > 0 ? matrix[0].length : 0;
       for (int[] ints : matrix) {
         for (int j = 0; j < M; j++) {
