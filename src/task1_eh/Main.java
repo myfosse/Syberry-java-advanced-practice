@@ -27,7 +27,7 @@ public class Main {
     writeMatrixToFile(count);
   }
 
-  public static void readFileLinesToArray(List<String> fileLines) {
+  public static void readFileLinesToArray(final List<String> fileLines) {
     try (Scanner s = new Scanner(new File("src\\task1_eh\\data\\input.txt"))) {
       String str;
       while (s.hasNext()) {
@@ -42,7 +42,7 @@ public class Main {
     }
   }
 
-  public static int[][] countAmountOfNeighborsForEachCellInMatrix(List<String> fileLines) {
+  public static int[][] countAmountOfNeighborsForEachCellInMatrix(final List<String> fileLines) {
 
     boolean isCorrectInputMatrix = true;
     int[][] inputBinaryMatrix = new int[fileLines.size()][];
@@ -112,7 +112,7 @@ public class Main {
     return answerMatrixWithAmountOfNeighborsForEachCell;
   }
 
-  public static void writeMatrixToFile(int[][] matrix) {
+  public static void writeMatrixToFile(final int[][] matrix) {
     try (Writer writer = new BufferedWriter(new FileWriter("src\\task1_eh\\data\\output.txt"))) {
       int M = matrix.length > 0 ? matrix[0].length : 0;
       for (int[] ints : matrix) {
