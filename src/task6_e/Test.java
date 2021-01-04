@@ -1,5 +1,7 @@
 package task6_e;
 
+import task6_e.type.LicenseType;
+
 /** @author Andrey Egorov */
 public class Test {
   public static void main(String[] args) {

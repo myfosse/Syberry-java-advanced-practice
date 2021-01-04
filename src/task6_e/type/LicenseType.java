@@ -1,4 +1,4 @@
-package task6_e;
+package task6_e.type;
 
 import java.util.Arrays;
 
