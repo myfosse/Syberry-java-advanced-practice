@@ -21,7 +21,7 @@ public class ArrayFilter {
     return instance;
   }
 
-  public static <T> Object[] filter(Object[] target, Predicate<Object> predicate) {
+  public static Object[] filter(Object[] target, Predicate<Object> predicate) {
     return Arrays.stream(target).filter(predicate).toArray(Object[]::new);
   }
 }
