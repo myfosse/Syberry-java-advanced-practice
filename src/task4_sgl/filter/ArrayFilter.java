@@ -22,17 +22,15 @@ public class ArrayFilter {
     return instance;
   }
 
-  public static Object[] filter(final Object[] target, final IPredicate<Object> predicate) {
-    // public static Object[] filter(final Object[] target, final Predicate<Object> predicate) {
+  public static Object[] filter(Object[] target, IPredicate<Object> predicate) {
 
     Collection<Object> result = new ArrayList<>();
-    for (Object element : target) {
+    for (Object element: target) {
       if (predicate.apply(element)) {
-        // if (predicate.test(element)) {
         result.add(element);
       }
     }
     return result.toArray();
-    // return Arrays.stream(target).filter(predicate).toArray(Object[]::new);
+    //return Arrays.stream(target).filter(predicate).toArray(Object[]::new);
   }
 }

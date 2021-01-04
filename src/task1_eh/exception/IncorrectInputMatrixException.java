@@ -5,15 +5,15 @@ public class IncorrectInputMatrixException extends Exception {
 
   public IncorrectInputMatrixException() {}
 
-  public IncorrectInputMatrixException(final String message) {
+  public IncorrectInputMatrixException(String message) {
     super(message);
   }
 
-  public IncorrectInputMatrixException(final Throwable err) {
+  public IncorrectInputMatrixException(Throwable err) {
     super(err);
   }
 
-  public IncorrectInputMatrixException(final String message, final Throwable err) {
+  public IncorrectInputMatrixException(String message, Throwable err) {
     super(message, err);
   }
 }
