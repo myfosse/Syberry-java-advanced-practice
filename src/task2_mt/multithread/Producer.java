@@ -9,7 +9,7 @@ public class Producer implements Runnable {
   private int queueCapacityToAdd = 20;
   private final Queue<Integer> queue;
 
-  public Producer(int queueCapacityToAdd, final Queue<Integer> queue) {
+  public Producer(final int queueCapacityToAdd, final Queue<Integer> queue) {
     this.queueCapacityToAdd = queueCapacityToAdd;
     this.queue = queue;
   }
