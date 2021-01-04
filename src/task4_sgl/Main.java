@@ -1,6 +1,6 @@
-package task5_sgl;
+package task4_sgl;
 
-import task5_sgl.filter.ArrayFilter;
+import task4_sgl.filter.ArrayFilter;
 
 import java.util.Arrays;
 import java.util.Objects;

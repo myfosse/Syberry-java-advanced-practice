@@ -1,4 +1,4 @@
-package task5_sgl.filter;
+package task4_sgl.filter;
 
 import java.util.Arrays;
 import java.util.function.Predicate;
